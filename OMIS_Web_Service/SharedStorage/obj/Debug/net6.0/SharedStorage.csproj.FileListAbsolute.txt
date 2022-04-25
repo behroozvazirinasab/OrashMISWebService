@@ -1,0 +1,12 @@
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.csproj.AssemblyReference.cache
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.GeneratedMSBuildEditorConfig.editorconfig
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.AssemblyInfoInputs.cache
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.AssemblyInfo.cs
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.csproj.CoreCompileInputs.cache
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\bin\Debug\net6.0\SharedStorage.deps.json
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\bin\Debug\net6.0\SharedStorage.dll
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\bin\Debug\net6.0\ref\SharedStorage.dll
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\bin\Debug\net6.0\SharedStorage.pdb
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.dll
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\ref\SharedStorage.dll
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OMIS_Web_Service\SharedStorage\obj\Debug\net6.0\SharedStorage.pdb
