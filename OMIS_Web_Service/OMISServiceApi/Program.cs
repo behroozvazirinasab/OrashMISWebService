@@ -9,6 +9,10 @@ var connection = builder.Configuration.GetConnectionString("OMISDB");
 builder.Services.AddServiceHubContainer(connection);
 
 builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new LongToStringConverter());
+});
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

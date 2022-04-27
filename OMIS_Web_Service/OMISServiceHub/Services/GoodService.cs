@@ -3,6 +3,8 @@ using Newtonsoft.Json;
 using OMISDataModel.Models;
 using OMISDataModel.ViewModels;
 using OMISServiceHub.Contexts;
+using OMISServiceHub.IServices;
+using SharedStorage.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +15,7 @@ using System.Web;
 
 namespace OMISServiceHub.Services
 {
-    public partial class GoodService
+    public partial class GoodService : IGoodService
     {
         private readonly OMISDBContext dbContext;
 
@@ -26,59 +28,75 @@ namespace OMISServiceHub.Services
             //connection = new SqlConnection(connStr);
         }
 
-        public List<ResponseModel> runInsertGoodsp(GoodViewModel good/*string Code, string Name, long? Type, long? UnitIdRef, long? MainGroupCodeRef, long? SecondGroupCodeRef, byte? Pic, Boolean? IsAdded, byte[] ImageData, Boolean? IsBuyAdded, string Serial, decimal? FiPrice1, decimal? OffPercent1, decimal? FiPrice2, decimal? OffPercent2, decimal? FiPrice3, decimal? OffPercent3, string SaleName, long? UnitPackingCodeRef, decimal? TaxPercent, decimal? lengthValue, decimal? WidthValue, decimal? HeightValue, long? GoodCategoryIdRef, Boolean? IsActive, decimal? DiameterValue, Boolean? SerialsControl, long? PatternIdRef, string NationalCode, decimal? WeightPack, decimal? WeightGoods, long? CriterionWeight, decimal? DimensionsLengthPack, decimal? DimensionsWidthPack, decimal? DimensionsHeightPack, decimal? DimensionsLengthGoods, decimal? DimensionsWidthGoods, decimal? DimensionsHeightGoods, long? CriterionDimensions*/)
+        public async Task<ResponseModel<bool>> runInsertGoodsp(GoodViewModel good)
         {
             var model = Maping(good);
 
             var query = "InsertGoods";
 
-            var queryparams = new
+            //var queryParams = new DynamicParameters();
+            //queryParams.Add("@StateCodeRef", model.StateCodeRef, DbType.Int64, ParameterDirection.Input);
+
+            var queryParams = new
             {
-                Code = Code,
-                Name = Name,
-                Type = Type,
-                UnitIdRef = UnitIdRef,
-                MainGroupCodeRef = MainGroupCodeRef,
-                SecondGroupCodeRef = SecondGroupCodeRef,
-                Pic = Pic,
-                IsAdded = IsAdded,
-                ImageData = ImageData,
-                IsBuyAdded = IsBuyAdded,
-                Serial = Serial,
-                FiPrice1 = FiPrice1,
-                OffPercent1 = OffPercent1,
-                FiPrice2 = FiPrice2,
-                OffPercent2 = OffPercent2,
-                FiPrice3 = FiPrice3,
-                OffPercent3 = OffPercent3,
-                SaleName = SaleName,
-                UnitPackingCodeRef = UnitPackingCodeRef,
-                TaxPercent = TaxPercent,
-                lengthValue = lengthValue,
-                WidthValue = WidthValue,
-                HeightValue = HeightValue,
-                GoodCategoryIdRef = GoodCategoryIdRef,
-                IsActive = IsActive,
-                DiameterValue = DiameterValue,
-                SerialsControl = SerialsControl,
-                PatternIdRef = PatternIdRef,
-                NationalCode = NationalCode,
-                WeightPack = WeightPack,
-                WeightGoods = WeightGoods,
-                CriterionWeight = CriterionWeight,
-                DimensionsLengthPack = DimensionsLengthPack,
-                DimensionsWidthPack = DimensionsWidthPack,
-                DimensionsHeightPack = DimensionsHeightPack,
-                DimensionsLengthGoods = DimensionsLengthGoods,
-                DimensionsWidthGoods = DimensionsWidthGoods,
-                DimensionsHeightGoods = DimensionsHeightGoods,
-                CriterionDimensions = CriterionDimensions
+                Code = model.Code,
+                Name = model.Name,
+                Type = model.Type,
+                UnitIdRef = model.UnitIdRef,
+                MainGroupCodeRef = model.MainGroupCodeRef,
+                SecondGroupCodeRef = model.SecondGroupCodeRef,
+                Pic = model.Pic,
+                IsAdded = model.IsAdded,
+                ImageData = model.ImageData,
+                IsBuyAdded = model.IsBuyAdded,
+                Serial = model.Serial,
+                FiPrice1 = model.FiPrice1,
+                OffPercent1 = model.OffPercent1,
+                FiPrice2 = model.FiPrice2,
+                OffPercent2 = model.OffPercent2,
+                FiPrice3 = model.FiPrice3,
+                OffPercent3 = model.OffPercent3,
+                SaleName = model.SaleName,
+                UnitPackingCodeRef = model.UnitPackingCodeRef,
+                TaxPercent = model.TaxPercent,
+                lengthValue = model.lengthValue,
+                WidthValue = model.WidthValue,
+                HeightValue = model.HeightValue,
+                GoodCategoryIdRef = model.GoodCategoryIdRef,
+                IsActive = model.IsActive,
+                DiameterValue = model.DiameterValue,
+                SerialsControl = model.SerialsControl,
+                PatternIdRef = model.PatternIdRef,
+                NationalCode = model.NationalCode,
+                WeightPack = model.WeightPack,
+                WeightGoods = model.WeightGoods,
+                CriterionWeight = model.CriterionWeight,
+                DimensionsLengthPack = model.DimensionsLengthPack,
+                DimensionsWidthPack = model.DimensionsWidthPack,
+                DimensionsHeightPack = model.DimensionsHeightPack,
+                DimensionsLengthGoods = model.DimensionsLengthGoods,
+                DimensionsWidthGoods = model.DimensionsWidthGoods,
+                DimensionsHeightGoods = model.DimensionsHeightGoods,
+                CriterionDimensions = model.CriterionDimensions
 
             };
 
-            var _res = dbContext.Connection.Query<ResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+            try
+            {
+                await dbContext.Connection.ExecuteAsync(query, queryParams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+                return new ResponseModel<bool>()
+                {
+                    Result = true,
+                    HasError = false
+                };
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+            //return _res.ToList();
         }
     }
 }

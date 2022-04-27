@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OMISServiceHub.Contexts;
+using OMISServiceHub.IServices;
+using OMISServiceHub.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +16,8 @@ namespace OMISServiceHub
         {
             services.AddScoped<OMISDBContext>(dbc => new OMISDBContext(_connection));
 
-            
+            services.AddScoped<IGoodService, GoodService>();
+
         }
     }
 }
