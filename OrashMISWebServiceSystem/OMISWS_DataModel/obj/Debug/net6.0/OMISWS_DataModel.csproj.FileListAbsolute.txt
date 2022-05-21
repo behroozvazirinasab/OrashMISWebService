@@ -21,3 +21,4 @@ D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OrashMISWebServic
 D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OrashMISWebServiceSystem\OMISWS_DataModel\obj\Debug\net6.0\OMISWS_DataModel.dll
 D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OrashMISWebServiceSystem\OMISWS_DataModel\obj\Debug\net6.0\ref\OMISWS_DataModel.dll
 D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OrashMISWebServiceSystem\OMISWS_DataModel\obj\Debug\net6.0\OMISWS_DataModel.pdb
+D:\OMISwebservice_source\behroozvazirinasab\OrashMISWebService\OrashMISWebServiceSystem\OMISWS_DataModel\obj\Debug\net6.0\OMISWS_DataModel.csproj.AssemblyReference.cache

@@ -3,7 +3,7 @@ using System.Xml;
 using System.Xml.Serialization;
 using static OMISWS_DataModel.XmlModels.RecivePaymentXmlModel;
 
-namespace OMISWS_ServiceHub.Service
+namespace OMISWS_ServiceHub.Services
 {
     public partial class RecivePaymentService : IRecivePaymentService
     {

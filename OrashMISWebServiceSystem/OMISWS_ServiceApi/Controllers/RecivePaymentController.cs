@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using OMISWS_DataModel.Models;
 using OMISWS_DataModel.ResponseModels;
-using OMISWS_ServiceHub.Service;
+using OMISWS_ServiceHub.Services;
 
 
 namespace OMISWS_ServiceApi.Controllers

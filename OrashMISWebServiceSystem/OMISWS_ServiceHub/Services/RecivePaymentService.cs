@@ -4,7 +4,7 @@ using OMISWS_DataModel.ResponseModels;
 using OMISWS_DataModel.Models;
 using OMISWS_ServiceHub.Contexts;
 
-namespace OMISWS_ServiceHub.Service
+namespace OMISWS_ServiceHub.Services
 {
     public partial class RecivePaymentService : IRecivePaymentService
     {

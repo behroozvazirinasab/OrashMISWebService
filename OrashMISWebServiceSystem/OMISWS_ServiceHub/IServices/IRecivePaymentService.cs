@@ -1,7 +1,7 @@
 ﻿using OMISWS_DataModel.Models;
 using OMISWS_DataModel.ResponseModels;
 
-namespace OMISWS_ServiceHub.Service
+namespace OMISWS_ServiceHub.Services
 {
     public interface IRecivePaymentService
     {
