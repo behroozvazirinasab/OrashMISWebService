@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "eRkbSNagHcVJmQdwhAgvtawmv98rb8tnVXDfTTBMqNw=",
+  "Source": "OMISWS_ServiceApi",
+  "BasePath": "_content/OMISWS_ServiceApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
