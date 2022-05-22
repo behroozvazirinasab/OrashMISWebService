@@ -15,7 +15,7 @@ namespace OMISWS_ServiceApi.Controllers
         }
 
         [HttpPost]
-        [Route("api/webservice/Factor")]
+        [Route("api/OrashMISWebService/Factor")]
         public List<ResponseModel> Post([FromBody] FactorInputModel value)
         {
             

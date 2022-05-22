@@ -2,13 +2,7 @@
 using OMISWS_DataModel.Models;
 using OMISWS_DataModel.ResponseModels;
 using OMISWS_ServiceHub.Contexts;
-using OMISWS_ServiceHub.Services;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OMISWS_ServiceHub.Services
 {
