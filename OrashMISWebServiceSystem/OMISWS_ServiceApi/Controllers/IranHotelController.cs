@@ -19,7 +19,7 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/IranHotel")]
-        public List<ResponseModel> Post([FromBody] IranHotelInputModel value)
+        public List<ResponseModel1> Post([FromBody] IranHotelInputModel value)
         {
             
             var _res = _iranHotelServices.runiranhotelsp(value.custcode, value.custname, value.custprice, value.custdesc,

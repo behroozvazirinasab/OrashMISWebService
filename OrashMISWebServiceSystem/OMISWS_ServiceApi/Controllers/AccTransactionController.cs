@@ -21,7 +21,7 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/AccTransaction")]
-        public List<ResponseModel> Post([FromBody] AccTransactionInputModel value)
+        public List<ResponseModel1> Post([FromBody] AccTransactionInputModel value)
         {
 
             var _res = _accTransactionServices.runAccTransactionsp(value.Value, value.Createuser, value.Createdate, value.Createtime);

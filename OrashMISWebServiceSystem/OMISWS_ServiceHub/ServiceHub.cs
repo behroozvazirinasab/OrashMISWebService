@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OMISWS_ServiceHub.Contexts;
+using OMISWS_ServiceHub.IServices;
 using OMISWS_ServiceHub.Services;
 
 
@@ -21,6 +22,8 @@ namespace OMISServiceHub
             services.AddScoped<IIranHotelService, IranHotelService>();
 
             services.AddScoped<IFactorService, FactorService>();
+
+            services.AddScoped<IGoodService, GoodService>();
 
         }
     }

@@ -6,6 +6,6 @@ namespace OMISWS_ServiceHub.Services
     public interface IAccTransactionService
     {
         string getxml(List<FactorDataModel> data);
-        List<ResponseModel> runAccTransactionsp(List<FactorDataModel> Value, long Createuser, string Createdate, string Createtime);
+        List<ResponseModel1> runAccTransactionsp(List<FactorDataModel> Value, long Createuser, string Createdate, string Createtime);
     }
 }

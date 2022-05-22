@@ -20,7 +20,7 @@ namespace OMISWS_ServiceApi.Controllers
         
         [HttpPost]
         [Route("api/OrashMISWebService/RecivePayment")]
-        public List<ResponseModel> Post([FromBody] RecivePaymentInputModel value)
+        public List<ResponseModel1> Post([FromBody] RecivePaymentInputModel value)
         {
 
             var _res = _recivePaymentServices.runRecivePaymentsp(value.Value, value.Createuser, value.Createdate, value.Createtime);

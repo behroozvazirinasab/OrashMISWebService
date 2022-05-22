@@ -17,7 +17,7 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel> runFactorsp(List<FactorModel> Value, long Createuser, string Createdate, string Createtime, long? VisitorId, decimal? VisitorPrice)
+        public List<ResponseModel1> runFactorsp(List<FactorModel> Value, long Createuser, string Createdate, string Createtime, long? VisitorId, decimal? VisitorPrice)
         {
             var query = "sp_Insert_Factor_FromXml";
             var xml = getxml(Value);
@@ -32,7 +32,7 @@ namespace OMISWS_ServiceHub.Services
                 VisitorPrice = VisitorPrice,
 
             };
-            var _res = dbContext.Connection.Query<ResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
             return _res.ToList();
         }

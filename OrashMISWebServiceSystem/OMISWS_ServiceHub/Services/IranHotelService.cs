@@ -24,7 +24,7 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel> runiranhotelsp(string Custcode, string Custname, string Custprice, string Custdesc, Int16 Turnovercode, string Date, List<IranHotelDataModel> supplier, List<IranHotelDataModel> bank)
+        public List<ResponseModel1> runiranhotelsp(string Custcode, string Custname, string Custprice, string Custdesc, Int16 Turnovercode, string Date, List<IranHotelDataModel> supplier, List<IranHotelDataModel> bank)
         {
             var query = "sp_Insert_IRHotelData_FromXml";
             var supplierxml = getxml(supplier);
@@ -41,7 +41,7 @@ namespace OMISWS_ServiceHub.Services
                 xmlBankList = bankxml,
                 CreateDate = Date
             };
-            var _res = dbContext.Connection.Query<ResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
             return _res.ToList();
         }

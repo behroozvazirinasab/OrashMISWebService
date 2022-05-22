@@ -6,6 +6,6 @@ namespace OMISWS_ServiceHub.Services
     public interface IIranHotelService
     {
         string getxml(List<IranHotelDataModel> data);
-        List<ResponseModel> runiranhotelsp(string Custcode, string Custname, string Custprice, string Custdesc, short Turnovercode, string Date, List<IranHotelDataModel> supplier, List<IranHotelDataModel> bank);
+        List<ResponseModel1> runiranhotelsp(string Custcode, string Custname, string Custprice, string Custdesc, short Turnovercode, string Date, List<IranHotelDataModel> supplier, List<IranHotelDataModel> bank);
     }
 }

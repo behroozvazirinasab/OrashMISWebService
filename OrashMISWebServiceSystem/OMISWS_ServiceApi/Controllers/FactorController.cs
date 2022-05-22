@@ -16,7 +16,7 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/Factor")]
-        public List<ResponseModel> Post([FromBody] FactorInputModel value)
+        public List<ResponseModel1> Post([FromBody] FactorInputModel value)
         {
             
             var _res = _factorService.runFactorsp(value.Value, value.Createuser, value.Createdate, value.Createtime, value.VisitorId, value.VisitorPrice);

@@ -20,7 +20,7 @@ namespace OMISWS_ServiceHub.Services
         
 
 
-        public List<ResponseModel> runRecivePaymentsp(List<RecivePaymentDataModel> Value, long Createuser, string Createdate, string Createtime)
+        public List<ResponseModel1> runRecivePaymentsp(List<RecivePaymentDataModel> Value, long Createuser, string Createdate, string Createtime)
         {
             var query = "sp_Insert_RecivePayment_FromXml";
             var xml = getxml(Value);
@@ -34,7 +34,7 @@ namespace OMISWS_ServiceHub.Services
 
             };
 
-            var _res = dbContext.Connection.Query<ResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
             return _res.ToList();
         }
