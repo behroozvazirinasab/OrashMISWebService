@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OMISWS_DataModel.ResponseModels
 {
-    public class ResponseModel
+    public class GoodSearchResponseModel
     {
         public string? Code { get; set; }
         public string? Name { get; set; }

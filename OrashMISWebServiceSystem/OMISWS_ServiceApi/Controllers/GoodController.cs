@@ -18,7 +18,7 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/InsertGood")]
-        public List<ResponseModel2> Post([FromBody] GoodViewModel good)
+        public List<ResponseModel2> Post([FromBody] GoodInsertViewModel good)
         {
 
             var _res = _goodService.runInsertGoodsp(good);
@@ -26,5 +26,16 @@ namespace OMISWS_ServiceApi.Controllers
         }
 
 
+
+
+
+        [HttpPost]
+        [Route("api/OrashMISWebService/SearchGood")]
+        public List<GoodSearchResponseModel> Post([FromBody] GoodSearchViewModel good)
+        {
+
+            var _res = _goodService.runSearchGoodsp(good);
+            return _res.ToList();
+        }
     }
 }

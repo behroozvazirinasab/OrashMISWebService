@@ -5,6 +5,8 @@ namespace OMISWS_ServiceHub.IServices
 {
     public interface IGoodService
     {
-        List<ResponseModel2> runInsertGoodsp(GoodViewModel goodViewModel);
+        List<ResponseModel2> runInsertGoodsp(GoodInsertViewModel goodInsertViewModel);
+
+        List<GoodSearchResponseModel> runSearchGoodsp(GoodSearchViewModel goodSearchViewModel);
     }
 }
