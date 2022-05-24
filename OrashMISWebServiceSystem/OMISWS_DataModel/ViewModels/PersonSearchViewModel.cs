@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace OMISWS_DataModel.ViewModels
 {
-    public class PersonSearchModel : IPersonBaseModel
+    public class PersonSearchViewModel : IPersonBaseModel
     {
         public long? Code { get; set; }
         public string Name { get; set; }
