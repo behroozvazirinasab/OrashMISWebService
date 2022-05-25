@@ -1,9 +1,13 @@
-﻿using OMISWS_DataModel.BaseModels;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace OMISWS_DataModel.Models
+namespace OMISWS_DataModel.BaseModels
 {
-    public class GoodInsertModel : IGoodInsertBaseModel
-    {
+    public interface IGoodInsertBaseModel
+    {   
         public string? Code { get; set; }
         public string? Name { get; set; }
         public long? Type { get; set; }

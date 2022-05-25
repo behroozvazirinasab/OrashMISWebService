@@ -44,8 +44,8 @@
 
 
 
-        public string Code { get; set; }
-        public string Name { get; set; }
+        public string? Code { get; set; }
+        public string? Name { get; set; }
         public long? Type { get; set; }
         public decimal? FiPrice1 { get; set; }
         public decimal? OffPercent1 { get; set; }
@@ -53,16 +53,16 @@
         public decimal? OffPercent2 { get; set; }
         public decimal? FiPrice3 { get; set; }
         public decimal? OffPercent3 { get; set; }
-        public string SaleName { get; set; }
+        public string? SaleName { get; set; }
         public decimal? TaxPercent { get; set; }
         public decimal? lengthValue { get; set; }
         public decimal? WidthValue { get; set; }
         public decimal? HeightValue { get; set; }
         public decimal? DiameterValue { get; set; }
-        public string NationalCode { get; set; }
+        public string? NationalCode { get; set; }
         public decimal? WeightPack { get; set; }
         public decimal? WeightGoods { get; set; }
-        public string Serial { get; set; }
+        public string? Serial { get; set; }
         //public Boolean? IsActive { get; set; }
 
 
