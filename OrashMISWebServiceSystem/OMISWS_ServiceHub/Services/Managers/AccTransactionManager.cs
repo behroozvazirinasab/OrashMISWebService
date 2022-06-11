@@ -10,9 +10,9 @@ using static OMISWS_DataModel.XmlModels.AccTransactionXmlModel;
 
 namespace OMISWS_ServiceHub.Services
 {
-    public partial class AccTransactionService
+    public partial class AccTransactionService : IAccTransactionService
     {
-        public string getxml(List<FactorDataModel> data)
+        public string getxml(List<AccTransactionDataModel> data)
         {
 
             var dc2 = new List<xmlADmodel>();

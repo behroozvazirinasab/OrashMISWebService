@@ -23,22 +23,31 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel1> runAccTransactionsp(List<FactorDataModel> Value, long Createuser, string Createdate, string Createtime)
+        public async Task<Resmodel<IEnumerable<ResponseModel3>>> runAccTransactionsp(AccTransactionInputModel accInput)
         {
             var query = "sp_Insert_AccTransaction_FromXml";
-            var xml = getxml(Value);
+
+            var xml = getxml(accInput.Value);
 
             var queryparams = new
             {
                 xmlVal = xml,
-                CreateUser = Createuser,
-                CreateDate = Createdate,
-                CreateTime = Createtime
-
+                CreateUser = accInput.Createuser,
+                CreateDate = accInput.Createdate,
+                CreateTime = accInput.Createtime
             };
-            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+
+            try 
+            { 
+                var _res = await dbContext.Connection.QueryAsync<ResponseModel3>(query, queryparams, commandType: CommandType.StoredProcedure);
+
+                return new Resmodel<IEnumerable<ResponseModel3>>()
+                {
+                    Result = _res
+                };
+            }
+            catch (Exception) { throw; }
         }
 
     }

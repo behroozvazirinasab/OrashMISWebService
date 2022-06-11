@@ -14,16 +14,17 @@ namespace OMISWS_ServiceApi.Controllers
             _factorService = factorService;
         }
 
+
+
+
         [HttpPost]
         [Route("api/OrashMISWebService/Factor")]
-        public List<ResponseModel1> Post([FromBody] FactorInputModel value)
+        public async Task<ResponseModel1> Post([FromBody] FactorInputModel input)
         {
             
-            var _res = _factorService.runFactorsp(value.Value, value.Createuser, value.Createdate, value.Createtime, value.VisitorId, value.VisitorPrice);
-            return _res.ToList();
+            var _res = await _factorService.runFactorsp(input);
+            return _res;
         }
-
-
 
 
 

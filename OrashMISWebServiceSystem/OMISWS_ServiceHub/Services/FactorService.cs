@@ -17,24 +17,26 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel1> runFactorsp(List<FactorModel> Value, long Createuser, string Createdate, string Createtime, long? VisitorId, decimal? VisitorPrice)
+        public async Task<ResponseModel1> runFactorsp(FactorInputModel input)
         {
             var query = "sp_Insert_Factor_FromXml";
-            var xml = getxml(Value);
+
+            var xml = getxml(input.Value);
 
             var queryparams = new
             {
                 xmlVal = xml,
-                CreateUser = Createuser,
-                CreateDate = Createdate,
-                CreateTime = Createtime,
-                VisitorId = VisitorId,
-                VisitorPrice = VisitorPrice,
+                CreateUser = input.Createuser,
+                CreateDate = input.Createdate,
+                CreateTime = input.Createtime,
+                VisitorId = input.VisitorId,
+                VisitorPrice = input.VisitorPrice,
 
             };
-            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+            var _res = await dbContext.Connection.QuerySingleAsync<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
+
+            return _res;
         }
 
 

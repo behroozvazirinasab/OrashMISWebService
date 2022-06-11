@@ -5,7 +5,13 @@ namespace OMISWS_ServiceHub.Services
 {
     public interface IFactorService
     {
+
+
         string getxml(List<FactorModel> data);
-        List<ResponseModel1> runFactorsp(List<FactorModel> Value, long Createuser, string Createdate, string Createtime, long? VisitorId, decimal? VisitorPrice);
+
+
+        Task<ResponseModel1> runFactorsp(FactorInputModel input);
+
+
     }
 }

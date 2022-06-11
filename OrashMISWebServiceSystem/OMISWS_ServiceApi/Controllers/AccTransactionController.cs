@@ -16,22 +16,15 @@ namespace OMISWS_ServiceApi.Controllers
 
 
 
-
-
-
         [HttpPost]
         [Route("api/OrashMISWebService/AccTransaction")]
-        public List<ResponseModel1> Post([FromBody] AccTransactionInputModel value)
+        public async Task<Resmodel<IEnumerable<ResponseModel3>>> Post([FromBody] AccTransactionInputModel accInput)
         {
 
-            var _res = _accTransactionServices.runAccTransactionsp(value.Value, value.Createuser, value.Createdate, value.Createtime);
+            var _res = await _accTransactionServices.runAccTransactionsp(accInput);
 
-            return _res.ToList();
+            return _res;
         }
-
-
-
-
 
 
 

@@ -12,9 +12,9 @@ namespace OMISWS_DataModel.Models
         public string Createdate { get; set; }
         public string Createtime { get; set; }
 
-        public List<FactorDataModel> Value { get; set; }
+        public List<AccTransactionDataModel> Value { get; set; }
     }
-    public class FactorDataModel
+    public class AccTransactionDataModel
     {
         public string HID { get; set; }
         public string ANO { get; set; }
