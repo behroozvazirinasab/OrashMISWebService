@@ -6,6 +6,6 @@ namespace OMISWS_ServiceHub.Services
     public interface IRecivePaymentService
     {
         string getxml(List<RecivePaymentDataModel> data);
-        List<ResponseModel1> runRecivePaymentsp(List<RecivePaymentDataModel> Value, long Createuser, string Createdate, string Createtime);
+        Task<Resmodel<IEnumerable<ResponseModel1>>> runRecivePaymentsp(RecivePaymentInputModel recivePaymentInput);
     }
 }

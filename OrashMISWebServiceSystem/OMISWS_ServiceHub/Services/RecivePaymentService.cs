@@ -20,23 +20,30 @@ namespace OMISWS_ServiceHub.Services
         
 
 
-        public List<ResponseModel1> runRecivePaymentsp(List<RecivePaymentDataModel> Value, long Createuser, string Createdate, string Createtime)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> runRecivePaymentsp(RecivePaymentInputModel recivePaymentInput/*List<RecivePaymentDataModel> Value, long Createuser, string Createdate, string Createtime*/)
         {
             var query = "sp_Insert_RecivePayment_FromXml";
-            var xml = getxml(Value);
+            var xml = getxml(recivePaymentInput.Value);
 
             var queryparams = new
             {
                 xmlVal = xml,
-                Createuser = Createuser,
-                Createdate = Createdate,
-                Createtime = Createtime
+                Createuser = recivePaymentInput.Createuser,
+                Createdate = recivePaymentInput.Createdate,
+                Createtime = recivePaymentInput.Createtime
 
             };
 
-            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
+            try
+            {
+                var _res = await dbContext.Connection.QueryAsync<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+                return new Resmodel<IEnumerable<ResponseModel1>>()
+                {
+                    Result = _res
+                };
+            }
+            catch (Exception) { throw; }
         }
     }
 

@@ -10,7 +10,7 @@ namespace OMISWS_ServiceHub.Services
         string getxml(List<FactorModel> data);
 
 
-        Task<ResponseModel1> runFactorsp(FactorInputModel input);
+        Task<Resmodel<IEnumerable<ResponseModel1>>> runFactorsp(FactorInputModel factorInput);
 
 
     }

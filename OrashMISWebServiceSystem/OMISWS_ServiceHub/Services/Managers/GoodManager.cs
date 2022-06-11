@@ -11,7 +11,7 @@ namespace OMISWS_ServiceHub.Services
 {
     public partial class GoodService : IGoodService
     {
-        private GoodInsertModel MapForInsert(GoodInsertViewModel viewModel)
+        public GoodInsertModel MapForInsert(GoodInsertViewModel viewModel)
         {
             return new GoodInsertModel()
             {

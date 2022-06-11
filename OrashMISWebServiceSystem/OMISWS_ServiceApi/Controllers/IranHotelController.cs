@@ -19,12 +19,12 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/IranHotel")]
-        public List<ResponseModel1> Post([FromBody] IranHotelInputModel value)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> Post([FromBody] IranHotelInputModel iranHotelInput)
         {
             
-            var _res = _iranHotelServices.runiranhotelsp(value.custcode, value.custname, value.custprice, value.custdesc,
-                                         value.turnovercode, value.date, value.supplier, value.bank);
-            return _res.ToList();
+            var _res = await _iranHotelServices.runiranhotelsp(iranHotelInput);
+
+            return _res;
         }
     }
 }

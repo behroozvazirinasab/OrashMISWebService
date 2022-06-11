@@ -2,7 +2,7 @@
 
 namespace OMISWS_DataModel.Models
 {
-    public class GoodSearchModel : IGoodBaseModel
+    public class GoodSearchModel /*: IGoodInsertBaseModel*/
     {
         public string Code { get; set; }
         public string Name { get; set; }

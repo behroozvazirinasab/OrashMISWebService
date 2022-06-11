@@ -18,14 +18,14 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel2> runInsertGoodsp(GoodInsertViewModel good)
+        public async Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsertInput)
         {
-            var model = MapForInsert(good);
+            var model = MapForInsert(goodInsertInput);
 
             var query = "InsertGoods";
 
 
-            var queryParams = new DynamicParameters();
+            /*var queryParams = new DynamicParameters();
             queryParams.Add("@Code", model.Code, DbType.String, ParameterDirection.Input);
             queryParams.Add("@Name", model.Name, DbType.String, ParameterDirection.Input);
             queryParams.Add("@Type", model.Type, DbType.Int64, ParameterDirection.Input);
@@ -64,101 +64,106 @@ namespace OMISWS_ServiceHub.Services
             queryParams.Add("@DimensionsLengthGoods", model.DimensionsLengthGoods, DbType.Decimal, ParameterDirection.Input);
             queryParams.Add("@DimensionsWidthGoods", model.DimensionsWidthGoods, DbType.Decimal, ParameterDirection.Input);
             queryParams.Add("@DimensionsHeightGoods", model.DimensionsHeightGoods, DbType.Decimal, ParameterDirection.Input);
-            queryParams.Add("@CriterionDimensions", model.CriterionDimensions, DbType.Int64, ParameterDirection.Input);
+            queryParams.Add("@CriterionDimensions", model.CriterionDimensions, DbType.Int64, ParameterDirection.Input);*/
 
-
-            /*var queryparams = new
-            {
-                Code = goodInsertViewModel.Code,
-                Name = goodInsertViewModel.Name,
-                Type = goodInsertViewModel.Type,
-                UnitIdRef = goodInsertViewModel.UnitIdRef,
-                MainGroupCodeRef = goodInsertViewModel.MainGroupCodeRef,
-                SecondGroupCodeRef = goodInsertViewModel.SecondGroupCodeRef,
-                Pic = goodInsertViewModel.Pic,
-                IsAdded = goodInsertViewModel.IsAdded,
-                ImageData = goodInsertViewModel.ImageData,
-                IsBuyAdded = goodInsertViewModel.IsBuyAdded,
-                Serial = goodInsertViewModel.Serial,
-                FiPrice1 = goodInsertViewModel.FiPrice1,
-                OffPercent1 = goodInsertViewModel.OffPercent1,
-                FiPrice2 = goodInsertViewModel.FiPrice2,
-                OffPercent2 = goodInsertViewModel.OffPercent2,
-                FiPrice3 = goodInsertViewModel.FiPrice3,
-                OffPercent3 = goodInsertViewModel.OffPercent3,
-                SaleName = goodInsertViewModel.SaleName,
-                UnitPackingCodeRef = goodInsertViewModel.UnitPackingCodeRef,
-                TaxPercent = goodInsertViewModel.TaxPercent,
-                lengthValue = goodInsertViewModel.lengthValue,
-                WidthValue = goodInsertViewModel.WidthValue,
-                HeightValue = goodInsertViewModel.HeightValue,
-                GoodCategoryIdRef = goodInsertViewModel.GoodCategoryIdRef,
-                IsActive = goodInsertViewModel.IsActive,
-                DiameterValue = goodInsertViewModel.DiameterValue,
-                SerialsControl = goodInsertViewModel.SerialsControl,
-                PatternIdRef = goodInsertViewModel.PatternIdRef,
-                NationalCode = goodInsertViewModel.NationalCode,
-                WeightPack = goodInsertViewModel.WeightPack,
-                WeightGoods = goodInsertViewModel.WeightGoods,
-                CriterionWeight = goodInsertViewModel.CriterionWeight,
-                DimensionsLengthPack = goodInsertViewModel.DimensionsLengthPack,
-                DimensionsWidthPack = goodInsertViewModel.DimensionsWidthPack,
-                DimensionsHeightPack = goodInsertViewModel.DimensionsHeightPack,
-                DimensionsLengthGoods = goodInsertViewModel.DimensionsLengthGoods,
-                DimensionsWidthGoods = goodInsertViewModel.DimensionsWidthGoods,
-                DimensionsHeightGoods = goodInsertViewModel.DimensionsHeightGoods,
-                CriterionDimensions = goodInsertViewModel.CriterionDimensions*/
-
-
-
-            //};
-
-            var _res = dbContext.Connection.Query<ResponseModel2>(query, queryParams, commandType: CommandType.StoredProcedure);
-
-            return _res.ToList();
-        }
-
-
-
-
-        public List<GoodSearchResponseModel> runSearchGoodsp(GoodSearchViewModel goodSearchViewModel)
-        {
-            var query = "SearchGoods";
 
             var queryparams = new
             {
-                Code = goodSearchViewModel.Code,
-                Name = goodSearchViewModel.Name,
-                Type = goodSearchViewModel.Type,
-                UnitsName = goodSearchViewModel.UnitsName,
-                MainGroupName = goodSearchViewModel.MainGroupName,
-                SecondGroupName = goodSearchViewModel.SecondGroupName,
-                Serial = goodSearchViewModel.Serial,
-                FiPrice1 = goodSearchViewModel.FiPrice1,
-                OffPercent1 = goodSearchViewModel.OffPercent1,
-                FiPrice2 = goodSearchViewModel.FiPrice2,
-                OffPercent2 = goodSearchViewModel.OffPercent2,
-                FiPrice3 = goodSearchViewModel.FiPrice3,
-                OffPercent3 = goodSearchViewModel.OffPercent3,
-                SaleName = goodSearchViewModel.SaleName,
-                UnitPackingName = goodSearchViewModel.UnitPackingName,
-                TaxPercent = goodSearchViewModel.TaxPercent,
-                lengthValue = goodSearchViewModel.lengthValue,
-                WidthValue = goodSearchViewModel.WidthValue,
-                HeightValue = goodSearchViewModel.HeightValue,
-                GoodCategoryName = goodSearchViewModel.GoodCategoryName,
-                IsActive = goodSearchViewModel.IsActive,
-                DiameterValue = goodSearchViewModel.DiameterValue,
-                GoodPatternName = goodSearchViewModel.GoodPatternName,
-                NationalCode = goodSearchViewModel.NationalCode,
-                WeightPack = goodSearchViewModel.WeightPack,
-                WeightGoods = goodSearchViewModel.WeightGoods
-
+                Code = model.Code,
+                Name = model.Name,
+                Type = model.Type,
+                UnitIdRef = model.UnitIdRef,
+                MainGroupCodeRef = model.MainGroupCodeRef,
+                SecondGroupCodeRef = model.SecondGroupCodeRef,
+                Pic = model.Pic,
+                IsAdded = model.IsAdded,
+                ImageData = model.ImageData,
+                IsBuyAdded = model.IsBuyAdded,
+                Serial = model.Serial,
+                FiPrice1 = model.FiPrice1,
+                OffPercent1 = model.OffPercent1,
+                FiPrice2 = model.FiPrice2,
+                OffPercent2 = model.OffPercent2,
+                FiPrice3 = model.FiPrice3,
+                OffPercent3 = model.OffPercent3,
+                SaleName = model.SaleName,
+                UnitPackingCodeRef = model.UnitPackingCodeRef,
+                TaxPercent = model.TaxPercent,
+                lengthValue = model.lengthValue,
+                WidthValue = model.WidthValue,
+                HeightValue = model.HeightValue,
+                GoodCategoryIdRef = model.GoodCategoryIdRef,
+                IsActive = model.IsActive,
+                DiameterValue = model.DiameterValue,
+                SerialsControl = model.SerialsControl,
+                PatternIdRef = model.PatternIdRef,
+                NationalCode = model.NationalCode,
+                WeightPack = model.WeightPack,
+                WeightGoods = model.WeightGoods,
+                CriterionWeight = model.CriterionWeight,
+                DimensionsLengthPack = model.DimensionsLengthPack,
+                DimensionsWidthPack = model.DimensionsWidthPack,
+                DimensionsHeightPack = model.DimensionsHeightPack,
+                DimensionsLengthGoods = model.DimensionsLengthGoods,
+                DimensionsWidthGoods = model.DimensionsWidthGoods,
+                DimensionsHeightGoods = model.DimensionsHeightGoods,
+                CriterionDimensions = model.CriterionDimensions
             };
 
-            var _res = dbContext.Connection.Query<GoodSearchResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+            try
+            {
+                var _res = await dbContext.Connection.QueryAsync<ResponseModel2>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+                return new Resmodel<IEnumerable<ResponseModel2>>()
+                {
+                    Result = _res
+                };
+            }
+            catch (Exception) { throw; }
         }
     }
+
+
+
+
+        //public List<GoodSearchResponseModel> runSearchGoodsp(GoodSearchViewModel goodSearchViewModel)
+        //{
+        //    var query = "SearchGoods";
+
+        //    var queryparams = new
+        //    {
+        //        Code = goodSearchViewModel.Code,
+        //        Name = goodSearchViewModel.Name,
+        //        Type = goodSearchViewModel.Type,
+        //        UnitsName = goodSearchViewModel.UnitsName,
+        //        MainGroupName = goodSearchViewModel.MainGroupName,
+        //        SecondGroupName = goodSearchViewModel.SecondGroupName,
+        //        Serial = goodSearchViewModel.Serial,
+        //        FiPrice1 = goodSearchViewModel.FiPrice1,
+        //        OffPercent1 = goodSearchViewModel.OffPercent1,
+        //        FiPrice2 = goodSearchViewModel.FiPrice2,
+        //        OffPercent2 = goodSearchViewModel.OffPercent2,
+        //        FiPrice3 = goodSearchViewModel.FiPrice3,
+        //        OffPercent3 = goodSearchViewModel.OffPercent3,
+        //        SaleName = goodSearchViewModel.SaleName,
+        //        UnitPackingName = goodSearchViewModel.UnitPackingName,
+        //        TaxPercent = goodSearchViewModel.TaxPercent,
+        //        lengthValue = goodSearchViewModel.lengthValue,
+        //        WidthValue = goodSearchViewModel.WidthValue,
+        //        HeightValue = goodSearchViewModel.HeightValue,
+        //        GoodCategoryName = goodSearchViewModel.GoodCategoryName,
+        //        IsActive = goodSearchViewModel.IsActive,
+        //        DiameterValue = goodSearchViewModel.DiameterValue,
+        //        GoodPatternName = goodSearchViewModel.GoodPatternName,
+        //        NationalCode = goodSearchViewModel.NationalCode,
+        //        WeightPack = goodSearchViewModel.WeightPack,
+        //        WeightGoods = goodSearchViewModel.WeightGoods
+
+        //    };
+
+        //    var _res = dbContext.Connection.Query<GoodSearchResponseModel>(query, queryparams, commandType: CommandType.StoredProcedure);
+
+        //    return _res.ToList();
+        //}
+    
 }

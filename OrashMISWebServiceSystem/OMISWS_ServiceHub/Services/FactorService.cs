@@ -17,26 +17,33 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public async Task<ResponseModel1> runFactorsp(FactorInputModel input)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> runFactorsp(FactorInputModel factorInput)
         {
             var query = "sp_Insert_Factor_FromXml";
 
-            var xml = getxml(input.Value);
+            var xml = getxml(factorInput.Value);
 
             var queryparams = new
             {
                 xmlVal = xml,
-                CreateUser = input.Createuser,
-                CreateDate = input.Createdate,
-                CreateTime = input.Createtime,
-                VisitorId = input.VisitorId,
-                VisitorPrice = input.VisitorPrice,
+                CreateUser = factorInput.Createuser,
+                CreateDate = factorInput.Createdate,
+                CreateTime = factorInput.Createtime,
+                VisitorId = factorInput.VisitorId,
+                VisitorPrice = factorInput.VisitorPrice,
 
             };
 
-            var _res = await dbContext.Connection.QuerySingleAsync<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
+            try
+            {
+                var _res = await dbContext.Connection.QueryAsync<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res;
+                return new Resmodel<IEnumerable<ResponseModel1>>()
+                {
+                    Result = _res
+                };
+            }
+            catch (Exception) { throw; }
         }
 
 

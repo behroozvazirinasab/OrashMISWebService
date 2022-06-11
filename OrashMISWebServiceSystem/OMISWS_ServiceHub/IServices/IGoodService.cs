@@ -1,12 +1,15 @@
-﻿using OMISWS_DataModel.ResponseModels;
+﻿using OMISWS_DataModel.Models;
+using OMISWS_DataModel.ResponseModels;
 using OMISWS_DataModel.ViewModels;
 
 namespace OMISWS_ServiceHub.IServices
 {
-    public interface IGoodService
+    public interface IGoodService 
     {
-        List<ResponseModel2> runInsertGoodsp(GoodInsertViewModel good);
+        Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsertInput);
 
-        List<GoodSearchResponseModel> runSearchGoodsp(GoodSearchViewModel goodSearchViewModel);
+        GoodInsertModel MapForInsert(GoodInsertViewModel goodInsertInput);
+
+        
     }
 }

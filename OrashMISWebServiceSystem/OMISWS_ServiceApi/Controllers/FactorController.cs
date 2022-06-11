@@ -19,10 +19,10 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/Factor")]
-        public async Task<ResponseModel1> Post([FromBody] FactorInputModel input)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> Post([FromBody] FactorInputModel factorInput)
         {
             
-            var _res = await _factorService.runFactorsp(input);
+            var _res = await _factorService.runFactorsp(factorInput);
             return _res;
         }
 

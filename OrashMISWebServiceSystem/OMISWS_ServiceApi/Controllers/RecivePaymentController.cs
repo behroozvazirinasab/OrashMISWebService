@@ -20,12 +20,12 @@ namespace OMISWS_ServiceApi.Controllers
         
         [HttpPost]
         [Route("api/OrashMISWebService/RecivePayment")]
-        public List<ResponseModel1> Post([FromBody] RecivePaymentInputModel value)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> Post([FromBody] RecivePaymentInputModel recivePaymentInput)
         {
 
-            var _res = _recivePaymentServices.runRecivePaymentsp(value.Value, value.Createuser, value.Createdate, value.Createtime);
+            var _res = await _recivePaymentServices.runRecivePaymentsp(recivePaymentInput);
 
-            return _res.ToList();
+            return _res;
         }
     }
 }

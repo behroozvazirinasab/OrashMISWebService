@@ -18,24 +18,24 @@ namespace OMISWS_ServiceApi.Controllers
 
         [HttpPost]
         [Route("api/OrashMISWebService/InsertGood")]
-        public List<ResponseModel2> Post([FromBody] GoodInsertViewModel good)
+        public async Task<Resmodel<IEnumerable<ResponseModel2>>> Post([FromBody] GoodInsertViewModel goodInsertInput)
         {
 
-            var _res = _goodService.runInsertGoodsp(good);
-            return _res.ToList();
+            var _res = await _goodService.runInsertGoodsp(goodInsertInput);
+            return _res;
         }
 
 
 
 
 
-        [HttpPost]
-        [Route("api/OrashMISWebService/SearchGood")]
-        public List<GoodSearchResponseModel> Post([FromBody] GoodSearchViewModel good)
-        {
+        //[HttpPost]
+        //[Route("api/OrashMISWebService/SearchGood")]
+        //public List<GoodSearchResponseModel> Post([FromBody] GoodSearchViewModel good)
+        //{
 
-            var _res = _goodService.runSearchGoodsp(good);
-            return _res.ToList();
-        }
+        //    var _res = _goodService.runSearchGoodsp(good);
+        //    return _res.ToList();
+        //}
     }
 }

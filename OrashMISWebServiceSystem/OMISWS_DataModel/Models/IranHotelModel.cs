@@ -9,12 +9,12 @@ namespace OMISWS_DataModel.Models
     
         public class IranHotelInputModel
         {
-            public string custcode { get; set; }
-            public string custname { get; set; }
-            public string custprice { get; set; }
-            public string custdesc { get; set; }
-            public Int16 turnovercode { get; set; }
-            public string date { get; set; }
+            public string CustomerCode { get; set; }
+            public string CustomerName { get; set; }
+            public string CustomerPrice { get; set; }
+            public string CustomerDescription { get; set; }
+            public Int16 TurnOverCode { get; set; }
+            public string CreateDate { get; set; }
 
             public List<IranHotelDataModel> supplier { get; set; }
 

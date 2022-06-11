@@ -24,26 +24,37 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public List<ResponseModel1> runiranhotelsp(string Custcode, string Custname, string Custprice, string Custdesc, Int16 Turnovercode, string Date, List<IranHotelDataModel> supplier, List<IranHotelDataModel> bank)
+        public async Task<Resmodel<IEnumerable<ResponseModel1>>> runiranhotelsp(IranHotelInputModel iranHotelInput)
         {
             var query = "sp_Insert_IRHotelData_FromXml";
-            var supplierxml = getxml(supplier);
-            var bankxml = getxml(bank);
+
+            var supplierxml = getxml(iranHotelInput.supplier);
+            var bankxml = getxml(iranHotelInput.bank);
 
             var queryparams = new
             {
-                CustomerCode = Custcode,
-                CustomerName = Custname,
-                CustomerPrice = Custprice,
-                CustomerDescription = Custdesc,
-                TurnOverCode = Turnovercode,
+                CustomerCode = iranHotelInput.CustomerCode,
+                CustomerName = iranHotelInput.CustomerName,
+                CustomerPrice = iranHotelInput.CustomerPrice,
+                CustomerDescription = iranHotelInput.CustomerDescription,
+                TurnOverCode = iranHotelInput.TurnOverCode,
                 xmlSupplierList = supplierxml,
                 xmlBankList = bankxml,
-                CreateDate = Date
+                CreateDate = iranHotelInput.CreateDate
             };
-            var _res = dbContext.Connection.Query<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
 
-            return _res.ToList();
+
+
+            try
+            {
+                var _res = await dbContext.Connection.QueryAsync<ResponseModel1>(query, queryparams, commandType: CommandType.StoredProcedure);
+
+                return new Resmodel<IEnumerable<ResponseModel1>>()
+                {
+                    Result = _res
+                };
+            }
+            catch (Exception) { throw; }
         }
 
 
