@@ -18,9 +18,9 @@ namespace OMISWS_ServiceHub.Services
 
 
 
-        public async Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsertInput)
+        public async Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsert)
         {
-            var model = MapForInsert(goodInsertInput);
+            //var model = MapForInsert(goodInsert);
 
             var query = "InsertGoods";
 
@@ -69,45 +69,45 @@ namespace OMISWS_ServiceHub.Services
 
             var queryparams = new
             {
-                Code = model.Code,
-                Name = model.Name,
-                Type = model.Type,
-                UnitIdRef = model.UnitIdRef,
-                MainGroupCodeRef = model.MainGroupCodeRef,
-                SecondGroupCodeRef = model.SecondGroupCodeRef,
-                Pic = model.Pic,
-                IsAdded = model.IsAdded,
-                ImageData = model.ImageData,
-                IsBuyAdded = model.IsBuyAdded,
-                Serial = model.Serial,
-                FiPrice1 = model.FiPrice1,
-                OffPercent1 = model.OffPercent1,
-                FiPrice2 = model.FiPrice2,
-                OffPercent2 = model.OffPercent2,
-                FiPrice3 = model.FiPrice3,
-                OffPercent3 = model.OffPercent3,
-                SaleName = model.SaleName,
-                UnitPackingCodeRef = model.UnitPackingCodeRef,
-                TaxPercent = model.TaxPercent,
-                lengthValue = model.lengthValue,
-                WidthValue = model.WidthValue,
-                HeightValue = model.HeightValue,
-                GoodCategoryIdRef = model.GoodCategoryIdRef,
-                IsActive = model.IsActive,
-                DiameterValue = model.DiameterValue,
-                SerialsControl = model.SerialsControl,
-                PatternIdRef = model.PatternIdRef,
-                NationalCode = model.NationalCode,
-                WeightPack = model.WeightPack,
-                WeightGoods = model.WeightGoods,
-                CriterionWeight = model.CriterionWeight,
-                DimensionsLengthPack = model.DimensionsLengthPack,
-                DimensionsWidthPack = model.DimensionsWidthPack,
-                DimensionsHeightPack = model.DimensionsHeightPack,
-                DimensionsLengthGoods = model.DimensionsLengthGoods,
-                DimensionsWidthGoods = model.DimensionsWidthGoods,
-                DimensionsHeightGoods = model.DimensionsHeightGoods,
-                CriterionDimensions = model.CriterionDimensions
+                Code = goodInsert.Code,
+                Name = goodInsert.Name,
+                Type = goodInsert.Type,
+                UnitIdRef = goodInsert.UnitIdRef,
+                MainGroupCodeRef = goodInsert.MainGroupCodeRef,
+                SecondGroupCodeRef = goodInsert.SecondGroupCodeRef,
+                Pic = goodInsert.Pic,
+                IsAdded = goodInsert.IsAdded,
+                ImageData = goodInsert.ImageData,
+                IsBuyAdded = goodInsert.IsBuyAdded,
+                Serial = goodInsert.Serial,
+                FiPrice1 = goodInsert.FiPrice1,
+                OffPercent1 = goodInsert.OffPercent1,
+                FiPrice2 = goodInsert.FiPrice2,
+                OffPercent2 = goodInsert.OffPercent2,
+                FiPrice3 = goodInsert.FiPrice3,
+                OffPercent3 = goodInsert.OffPercent3,
+                SaleName = goodInsert.SaleName,
+                UnitPackingCodeRef = goodInsert.UnitPackingCodeRef,
+                TaxPercent = goodInsert.TaxPercent,
+                lengthValue = goodInsert.lengthValue,
+                WidthValue = goodInsert.WidthValue,
+                HeightValue = goodInsert.HeightValue,
+                GoodCategoryIdRef = goodInsert.GoodCategoryIdRef,
+                IsActive = goodInsert.IsActive,
+                DiameterValue = goodInsert.DiameterValue,
+                SerialsControl = goodInsert.SerialsControl,
+                PatternIdRef = goodInsert.PatternIdRef,
+                NationalCode = goodInsert.NationalCode,
+                WeightPack = goodInsert.WeightPack,
+                WeightGoods = goodInsert.WeightGoods,
+                CriterionWeight = goodInsert.CriterionWeight,
+                DimensionsLengthPack = goodInsert.DimensionsLengthPack,
+                DimensionsWidthPack = goodInsert.DimensionsWidthPack,
+                DimensionsHeightPack = goodInsert.DimensionsHeightPack,
+                DimensionsLengthGoods = goodInsert.DimensionsLengthGoods,
+                DimensionsWidthGoods = goodInsert.DimensionsWidthGoods,
+                DimensionsHeightGoods = goodInsert.DimensionsHeightGoods,
+                CriterionDimensions = goodInsert.CriterionDimensions
             };
 
             try

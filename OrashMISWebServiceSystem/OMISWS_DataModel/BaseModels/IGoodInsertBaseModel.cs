@@ -8,7 +8,7 @@ namespace OMISWS_DataModel.BaseModels
 {
     public interface IGoodInsertBaseModel
     {   
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public string? Name { get; set; }
         public long? Type { get; set; }
         public long? UnitIdRef { get; set; }

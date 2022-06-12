@@ -6,9 +6,9 @@ namespace OMISWS_ServiceHub.IServices
 {
     public interface IGoodService 
     {
-        Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsertInput);
+        Task<Resmodel<IEnumerable<ResponseModel2>>> runInsertGoodsp(GoodInsertViewModel goodInsert);
 
-        GoodInsertModel MapForInsert(GoodInsertViewModel goodInsertInput);
+        GoodInsertModel MapForInsert(GoodInsertViewModel goodInsert);
 
         
     }

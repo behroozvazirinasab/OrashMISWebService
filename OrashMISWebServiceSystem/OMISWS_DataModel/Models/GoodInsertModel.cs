@@ -2,9 +2,9 @@
 
 namespace OMISWS_DataModel.Models
 {
-    public class GoodInsertModel : IGoodInsertBaseModel
+    public class GoodInsertModel /*: IGoodInsertBaseModel*/
     {
-        public string? Code { get; set; }
+        public string Code { get; set; }
         public string? Name { get; set; }
         public long? Type { get; set; }
         public long? UnitIdRef { get; set; }
