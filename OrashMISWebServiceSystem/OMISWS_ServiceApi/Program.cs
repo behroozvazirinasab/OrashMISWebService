@@ -10,6 +10,7 @@ builder.Services.AddServiceHubContainer(connection);
 
 
 builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 

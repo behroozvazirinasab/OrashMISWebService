@@ -2,6 +2,7 @@
 using OMISWS_DataModel.ResponseModels;
 using OMISWS_DataModel.ViewModels;
 using OMISWS_ServiceHub.Contexts;
+using OMISWS_ServiceHub.IServices;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace OMISWS_ServiceHub.Services
 {
-    public partial class ChangeGoodRateService
+    public partial class ChangeGoodRateService : IChangeGoodRateService
     {
         private readonly OMISWSDBContext dbContext;
 

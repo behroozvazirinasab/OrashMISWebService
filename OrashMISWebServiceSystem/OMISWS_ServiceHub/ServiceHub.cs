@@ -27,6 +27,9 @@ namespace OMISServiceHub
 
             services.AddScoped<IPersonService, PersonService>();
 
+            services.AddScoped<IChangeGoodRateService, ChangeGoodRateService>();
+            
+
         }
     }
 }
