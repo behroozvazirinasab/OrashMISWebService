@@ -10,9 +10,8 @@ namespace OMISWS_DataModel.ViewModels
 {
     public class ChangeGoodRateViewModel : IChangeGoodRateBaseModel
     {
-        [Required]
+        
         public string? GoodCode { get; set; }
-        [Required]
         public long? StorageCode { get; set; }
         public decimal? FiPrice1 { get; set; }
         public decimal? OffPercent1 { get; set; }

@@ -22,15 +22,15 @@ namespace OMISWS_ServiceApi.Controllers
 
 
 
-        [HttpPost]
+        [HttpPost] 
         [Route("api/OrashMISWebService/ChangeGoodRate")]
         public async Task<Resmodel<IEnumerable<ResponseModel4>>> Post([FromBody] ChangeGoodRateViewModel rateInput)
         {
+            
+                var _res = await _changeGoodRateService.runChangeGoodRatesp(rateInput);
 
-            var _res = await _changeGoodRateService.runChangeGoodRatesp(rateInput);
-
-            return _res;
-
+                return _res;
+           
 
         }
 
