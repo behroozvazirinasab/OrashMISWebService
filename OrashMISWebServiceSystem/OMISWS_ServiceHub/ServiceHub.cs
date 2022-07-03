@@ -28,8 +28,8 @@ namespace OMISServiceHub
             services.AddScoped<IPersonService, PersonService>();
 
             services.AddScoped<IChangeGoodRateService, ChangeGoodRateService>();
-            
 
+            services.AddScoped<IStockGoodInStorgeService, StockGoodInStorgeService>();
         }
     }
 }

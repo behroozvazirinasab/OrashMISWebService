@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OMISWS_DataModel.Models
+namespace OMISWS_DataModel.ViewModels
 {
-    public class StockGoodInStorgeModel : IStockGoodInStorgeBaseModel
+    public class StockGoodInStorgeViewModel : IStockGoodInStorgeBaseModel
     {
         public string? GoodsCode { get; set; }
         public long? StorageCode { get; set; }
